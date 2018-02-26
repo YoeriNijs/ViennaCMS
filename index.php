@@ -83,7 +83,5 @@ new \DB\SQL\Session($database, 'sessions', TRUE, function($session){
 // Copy token against csrf attacks
 $f3->copy('CSRF','SESSION.csrf');
 
-\Template::instance()->extend('pagebrowser','\Pagination::renderTag');
-
 // Run the application
 $f3->run();
