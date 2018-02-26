@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bcosca/fatfree": "^3.6",
+        "ikkez/f3-flash": "^1.0"
+    }
+}

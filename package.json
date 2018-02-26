@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "glyphicons": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "gulp-zip": "^4.1.0",
+    "spectre.css": "^0.5.1",
+    "tinymce": "^4.7.7"
+  }
+}

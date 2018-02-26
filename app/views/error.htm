@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ @SITE_DESCRIPTION }}">
+    <meta name="keywords" content="{{ @SITE_KEYWORDS }}">
+    <meta name="author" content="{{ @SITE_AUTHOR }}">
+    <title>{{ @SITE_NAME }}</title>
+    <link rel="stylesheet" href="{{ @SITE_BASE }}/public/css/bundle.css">
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="columns">
+            <div class="column" style="height:800px;">
+                <iframe width="100%" height="100%" src="{{ @ERR }}" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<include href="footer.htm" />
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- ViennaCMS is free and opensource software, released by Yoeri Nijs under GPLv3 license. -->
+<!-- Source: github.com/YoeriNijs/ViennaCMS -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ @SITE_DESCRIPTION }}">
+    <meta name="keywords" content="{{ @SITE_KEYWORDS }}">
+    <meta name="author" content="{{ @SITE_AUTHOR }}">
+    <title>{{ @SITE_NAME }}</title>
+    <link rel="stylesheet" href="{{ @BASE }}/public/css/bundle.css">
+    <script src="public/js/bundle.js"></script>
+</head>
+<body>
+
+<include href="navbar.htm" />
+
+<div class="divider"></div>
+
+<section class="content">
+    <div class="column is-8 is-offset-2">
+        <F3:repeat group="{{ \Flash::instance()->getMessages() }}" value="{{ @msg }}">
+            <div class="toast {{ @msg.status }}">
+                {{ @msg.text | esc }}
+            </div>
+        </F3:repeat>
+        <include href="{{ @view }}" />
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<include href="footer.htm" />
+
+<script src="minify/js?files=tinymce.js"></script>
+</body>
+</html>

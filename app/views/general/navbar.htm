@@ -1,0 +1,16 @@
+<header class="navbar">
+    <section class="navbar-section">
+        <a href="{{ @BASE }}" class="btn btn-link">Home</a>
+    </section>
+    <section class="navbar-center">
+        <img src="{{ @BASE }}/app/assets/img/general/logo.png" alt="Logo" />
+    </section>
+    <section class="navbar-section">
+        <check if="{{ @SESSION.display_name }}">
+            <true>
+                <a href="{{ @BASE }}/admin" class="btn btn-link">{{ @messages.admin.title }}</a>
+                <a href="{{ @BASE }}/logoff" class="btn btn-link">{{ @messages.logoff.logoff }}</a>
+            </true>
+        </check>
+    </section>
+</header>

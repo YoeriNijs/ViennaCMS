@@ -1,0 +1,33 @@
+<check if="{{ sizeof(@blogposts) > 0 }}">
+    <true>
+        <br />
+        <div class="container">
+            <div class="columns">
+                <repeat group="{{ @blogposts }}" value="{{ @blogpost }}">
+                    <div class="column col-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{ @BASE }}/public/img/blog/{{ @blogpost.image }}" class="img-responsive">
+                            </div>
+                            <div class="card-header">
+                                <a href="{{ @BASE }}/blog/{{ @blogpost.id}}">
+                                    <div class="card-title h5">{{ @blogpost.title }}</div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                {{ @blogpost.body | raw }}
+                            </div>
+                            <div class="card-footer">
+                                {{ @blogpost.datetime }}
+                            </div>
+                        </div>
+                    </div>
+                </repeat>
+            </div>
+        </div>
+        <br />
+    </true>
+    <false>
+        {{ @messages.blogposts-no-posts }}
+    </false>
+</check>

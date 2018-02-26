@@ -1,0 +1,8 @@
+CREATE TABLE blogposts (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(500) NOT NULL,
+    body VARCHAR(10000) NOT NULL,
+    datetime DATETIME NOT NULL,
+    image VARCHAR(200) NOT NULL DEFAULT 'noimage.png',
+    PRIMARY KEY (id)
+);
