@@ -1,5 +1,5 @@
 # ViennaCMS
-A mightily simple blog system that is based on the powerful Fatfree microframework. At the moment for demonstration purposes only. In order to use this in a production environment, you have to implement some functionalities yourself.
+A mightily simple blog system that is based on the powerful Fatfree microframework. At the moment this is for demonstration purposes only. Hence, there are no plans to extend the current codebase. So, in order to use this in a production environment, you have to implement some functionalities yourself.
 
 This basic blog system uses the following techniques in order to display awesome content to the world:
   * [Fatfree](https://fatfreeframework.com)
