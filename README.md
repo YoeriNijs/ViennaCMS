@@ -25,3 +25,8 @@ This basic blog system uses the following techniques in order to display awesome
 # Credits
   * [Logo](https://www.flaticon.com/authors/smashicons)
   * 'No image' by The Noun Project/Gabriele Malaspina
+  
+# Screenshots
+![Screenshot 1](https://imgur.com/6ogcEHT)
+![Screenshot 2](https://imgur.com/t7FmqCO)
+![Screenshot 3](https://imgur.com/TxpV9TT)
