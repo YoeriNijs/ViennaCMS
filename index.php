@@ -23,7 +23,7 @@ $f3->route('GET /minify/*', function($f3, $args){
         return;
     }
 
-    // Get file type from input. If it is CSS, JS or an external library, it should correspond to hive key.
+    // Get file type from input. If it is CSS or JS, it should correspond to hive key.
     $fileType = explode('/',$args[0])[2];
     if(strtolower($fileType) != "css" && (strtolower($fileType) != "js")) {
         return;
@@ -42,7 +42,7 @@ $f3->route('GET /minify/*', function($f3, $args){
 $f3->set('ONERROR',
     function($f3) {
         // A curated list of movies that can be shown
-        // on a error page
+        // on an error page
         $movieUrls = array(
             "https://www.youtube.com/embed/SFnMTHhKdkw",
             "https://www.youtube.com/embed/V-bjOJzB7LY",
@@ -70,7 +70,7 @@ $database = new DB\SQL(
 // Start a new session
 new \DB\SQL\Session($database, 'sessions', TRUE, function($session){
     // Suspect session
-    $logger = new \Log(\Logfile::SESSION);
+    $logger = new \Log(\Logs::AUTH);
     $f3=\Base::instance();
     if(($ip = $session->ip()) != $f3->get('IP'))
         $logger->write('user changed IP: ' . $ip);
