@@ -20,7 +20,7 @@ This basic blog system uses the following techniques in order to display awesome
     ```sh
     $ php composer.phar install
     ```
-  - Finally, serve the content to the world. You can login by typing Admin/admin. At the moment, there is no support for editing the password, because this project is for demonstration purposes only. However, you can easily overrride the provided password by inserting a password that is encrypted by Bcrypt yourself.
+  - Finally, serve the content to the world. You can login by typing Admin/admin. At the moment, there is no support for editing the password, because this project is for demonstration purposes only. However, you can easily overrride the default password by inserting a password that is encrypted by Bcrypt yourself.
 
 # Credits
   * [Logo](https://www.flaticon.com/authors/smashicons)
