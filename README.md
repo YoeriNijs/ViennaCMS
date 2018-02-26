@@ -27,6 +27,6 @@ This basic blog system uses the following techniques in order to display awesome
   * 'No image' by The Noun Project/Gabriele Malaspina
   
 # Screenshots
-![Screenshot 1](https://imgur.com/6ogcEHT)
-![Screenshot 2](https://imgur.com/t7FmqCO)
-![Screenshot 3](https://imgur.com/TxpV9TT)
+![Screenshot 1](https://i.imgur.com/6ogcEHT.png)
+![Screenshot 2](https://i.imgur.com/t7FmqCO.png)
+![Screenshot 3](https://i.imgur.com/TxpV9TT.png)
