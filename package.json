@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "bulma": "^0.6.2",
-    "glyphicons": "^0.2.0",
     "gulp": "^3.9.1",
     "gulp-batch": "^1.0.5",
     "gulp-concat": "^2.6.1",
