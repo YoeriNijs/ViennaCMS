@@ -5,7 +5,9 @@
             <repeat group="{{ @blogposts }}" value="{{ @blogpost }}">
                 <section class="post">
                     <header class="post-header">
-                        <h2 class="post-title">{{ @blogpost.title }}</h2>
+                        <a href="{{ @BASE }}/blog/{{ @blogpost.id}}">
+                            <h2 class="post-title">{{ @blogpost.title }}</h2>
+                        </a>
                         <p class="post-meta">
                             {{ @blogpost.datetime }}
                         </p>

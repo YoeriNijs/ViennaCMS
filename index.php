@@ -39,12 +39,12 @@ $f3->route('GET /minify/*', function($f3, $args){
 }, 3600*24); // Javascript and CSS will be cached for 24 hours.
 
 // Setup generic error page. Disable if you need an error stacktrace.
-//$f3->set('ONERROR',
-//    function($f3) {
-//        $template = new Template();
-//        echo $template->render('error.htm');
-//    }
-//);
+$f3->set('ONERROR',
+    function($f3) {
+        $template = new Template();
+        echo $template->render('error.htm');
+    }
+);
 
 // Setting up the database for session management
 $database = new DB\SQL(

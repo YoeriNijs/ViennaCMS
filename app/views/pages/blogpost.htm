@@ -1,23 +1,21 @@
 <check if="{{ sizeof(@blogpost) == 1 }}">
     <true>
-        <div class="posts">
-            <section class="post">
-                <header class="post-header">
-                    <h2 class="post-title">{{ @blogpost.title }}</h2>
-                    <p class="post-meta">
-                        {{ @blogpost.datetime }}
-                    </p>
-                </header>
-                <div class="post-description">
-                    <div class="post-images pure-g">
-                        <div class="pure-u-1 pure-u-md-1-2">
-                            <img src="{{ @BASE }}/public/img/blog/{{ @blogpost.image }}" class="img-responsive">
-                        </div>
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ @blogpost.title }}</h2>
+                <p class="post-meta">
+                    {{ @blogpost.datetime }}
+                </p>
+            </header>
+            <div class="post-description">
+                <div class="post-images pure-g">
+                    <div class="pure-u-1 pure-u-md-1-2">
+                        <img src="{{ @BASE }}/public/img/blog/{{ @blogpost.image }}" class="img-responsive">
                     </div>
-                    {{ @blogpost.body | raw }}
                 </div>
-            </section>
-        </div>
+                {{ @blogpost.body | raw }}
+            </div>
+        </section>
     </true>
     <false>
         {{ @messages.blogposts.no.posts }}
