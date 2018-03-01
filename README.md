@@ -1,4 +1,7 @@
 # ViennaCMS
+
+UNDER DEVELOPMENT
+
 A mightily simple blog system that is based on the powerful Fatfree microframework. At the moment, it is only possible to publish articles, because this is for demonstration purposes only. Hence, there are no plans to extend the current codebase. So, in order to use this in a production environment, you have to implement some (crud) functionalities yourself.
 
 This basic blog system uses the following techniques in order to display awesome content to the world:
