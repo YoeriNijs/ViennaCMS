@@ -38,26 +38,13 @@ $f3->route('GET /minify/*', function($f3, $args){
     echo Web::instance()->minify($f3->get(strtoupper($fileType)) . $file);
 }, 3600*24); // Javascript and CSS will be cached for 24 hours.
 
-// Setup generic error page
-$f3->set('ONERROR',
-    function($f3) {
-        // A curated list of movies that can be shown
-        // on an error page
-        $movieUrls = array(
-            "https://www.youtube.com/embed/SFnMTHhKdkw",
-            "https://www.youtube.com/embed/V-bjOJzB7LY",
-            "https://www.youtube.com/embed/V7Z-Hq-xvxM",
-            "https://www.youtube.com/embed/2Yt6raj-S1M",
-            "https://www.youtube.com/embed/LNHBMFCzznE",
-            "https://www.youtube.com/embed/y8qc8Aa3weE",
-            "https://www.youtube.com/embed/NXhddUqNNjo",
-            "https://www.youtube.com/embed/esPRsT-lmw8"
-        );
-        $f3->set('ERR', $movieUrls[rand (0, count($movieUrls)-1)]);
-        $template = new Template();
-        echo $template->render('error.htm');
-    }
-);
+// Setup generic error page. Disable if you need an error stacktrace.
+//$f3->set('ONERROR',
+//    function($f3) {
+//        $template = new Template();
+//        echo $template->render('error.htm');
+//    }
+//);
 
 // Setting up the database for session management
 $database = new DB\SQL(

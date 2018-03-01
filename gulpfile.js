@@ -16,10 +16,10 @@ var today = new Date(),
     backupEverythingFile = 'backup.zip' + todayStr;
 
 // Global tasks
-gulp.task('build', ['bundle', 'copy-config', 'copy-vendor', 'copy-app', 'copy-public', 'create-misc', 'create-log']);
+gulp.task('build', ['bundle', 'copy-config', 'copy-vendor', 'copy-app', 'copy-public', 'copy-images', 'create-misc', 'create-log']);
 gulp.task('backup-build', ['build', 'zip']);
 gulp.task('backup', ['backup-everything']);
-gulp.task('bundle', ['bundle-js', 'bundle-css', 'move-tinymce-themes', 'move-tinymce-plugins', 'move-tinymce-skins']);
+gulp.task('bundle', ['bundle-js', 'copy-css', 'move-tinymce-themes', 'move-tinymce-plugins', 'move-tinymce-skins']);
 gulp.task('watch', ['watch-js', 'watch-css']);
 
 // All sub tasks
@@ -31,7 +31,7 @@ gulp.task('watch-js', function () {
 
 gulp.task('watch-css', function () {
     watch('/app/assets/**/*.css', batch(function (events, done) {
-        gulp.start('bundle-css', done);
+        gulp.start('copy-css', done);
     }));
 });
 
@@ -78,6 +78,12 @@ gulp.task('copy-public', function() {
         .pipe(gulp.dest(baseBuildPath + '/public/'));
 });
 
+gulp.task('copy-images', function() {
+    console.log('> Copy images');
+    return gulp.src('./app/assets/img/**/*')
+        .pipe(gulp.dest('./public/img'));
+});
+
 gulp.task('create-misc', function() {
     console.log('> Create misc directory');
     return gulp.src('./misc/**/')
@@ -98,12 +104,20 @@ gulp.task('bundle-js', function() {
         .pipe(gulp.dest('./public/js/'));
 });
 
-gulp.task('bundle-css', function () {
-    console.log('> Creating bundle for all css files');
+gulp.task('copy-css', function() {
+    console.log('> Copy public files');
     return gulp.src([
-        './node_modules/spectre.css/dist/spectre.css'
+        './node_modules/pure-css/lib/base.css',
+        './node_modules/pure-css/lib/buttons.css',
+        './node_modules/pure-css/lib/forms.css',
+        './node_modules/pure-css/lib/forms-nr.css',
+        './node_modules/pure-css/lib/grids.css',
+        './node_modules/pure-css/lib/grids-nr.css',
+        './node_modules/pure-css/lib/menus.css',
+        './node_modules/pure-css/lib/tables.css',
+        './app/assets/css/blog.css',
+        './app/assets/css/blog-old-ie.css'
     ])
-        .pipe(concatCss("bundle.css"))
         .pipe(gulp.dest('./public/css'));
 });
 

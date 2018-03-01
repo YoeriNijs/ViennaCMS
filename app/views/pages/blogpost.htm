@@ -1,32 +1,25 @@
 <check if="{{ sizeof(@blogpost) == 1 }}">
     <true>
-        <br />
-        <div class="container">
-            <div class="columns">
-                <div class="column col-3"></div>
-                <div class="column col-6">
-                    <div class="card">
-                        <div class="card-image">
+        <div class="posts">
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title">{{ @blogpost.title }}</h2>
+                    <p class="post-meta">
+                        {{ @blogpost.datetime }}
+                    </p>
+                </header>
+                <div class="post-description">
+                    <div class="post-images pure-g">
+                        <div class="pure-u-1 pure-u-md-1-2">
                             <img src="{{ @BASE }}/public/img/blog/{{ @blogpost.image }}" class="img-responsive">
                         </div>
-                        <div class="card-header">
-                            <div class="card-title h5">{{ @blogpost.title }}</div>
-                            <div class="card-subtitle text-gray">Software and hardware</div>
-                        </div>
-                        <div class="card-body">
-                            {{ @blogpost.body | raw }}
-                        </div>
-                        <div class="card-footer">
-                            {{ @blogpost.datetime }}
-                        </div>
                     </div>
+                    {{ @blogpost.body | raw }}
                 </div>
-                    <div class="column col-3"></div>
-            </div>
+            </section>
         </div>
-        <br />
     </true>
     <false>
-        {{ @messages.blogposts-no-posts }}
+        {{ @messages.blogposts.no.posts }}
     </false>
 </check>

@@ -3,7 +3,7 @@ A mightily simple blog system that is based on the powerful Fatfree microframewo
 
 This basic blog system uses the following techniques in order to display awesome content to the world:
   * [Fatfree](https://fatfreeframework.com)
-  * [SpectreCSS](https://picturepan2.github.io/spectre/index.html)
+  * [PureCSS](https://purecss.io)
   * [Yarn](https://yarnpkg.com/en/)
   * [Composer](https://getcomposer.org)
   * [TinyMCE](https://www.tinymce.com)
@@ -16,9 +16,13 @@ This basic blog system uses the following techniques in order to display awesome
     ```sh
     $ yarn install
     ```
-  - Install the composer dependencies by Using Composer:
+  - Install the composer dependencies by using Composer:
     ```sh
-    $ php composer.phar install
+    $ composer install
+    ```
+  - Build the app by running Gulp (development mode):
+    ```sh
+    $ gulp build
     ```
   - Finally, serve the content to the world. You can login by typing Admin/admin. At the moment, there is no support for editing the password, because this project is for demonstration purposes only. However, you can easily override the default password by inserting a password that is encrypted by Bcrypt.
 

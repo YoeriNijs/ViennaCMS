@@ -59,7 +59,7 @@ class BaseController {
         $this->f3->copy('CSRF','SESSION.csrf');
 
         // Display a warning to the user
-        \Flash::instance()->addMessage($message . '.', 'toast-warning');
+        \Flash::instance()->addMessage($message . '.', 'warning');
 
         // Reroute to login page and display error message
         $this->f3->reroute('/login');

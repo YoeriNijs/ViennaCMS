@@ -36,10 +36,11 @@ class AuthController extends BaseController {
             $this->f3->copy('CSRF','SESSION.csrf'); // Save actual token against CSRF in session
             $logger->write($username . " logged in successfully."); // Log login result
             $this->f3->reroute('/admin');
+            return;
         }
 
         $logger->write("Login failed for " . $username . ": invalid password.");
-        \Flash::instance()->addMessage($this->f3->get('messages.login.invalid') . '.', 'toast-warning');
+        \Flash::instance()->addMessage($this->f3->get('messages.login.invalid'), 'warning');
         $this->f3->reroute('/login');
     }
 

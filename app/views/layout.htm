@@ -9,28 +9,29 @@
     <meta name="keywords" content="{{ @SITE_KEYWORDS }}">
     <meta name="author" content="{{ @SITE_AUTHOR }}">
     <title>{{ @SITE_NAME }}</title>
-    <link rel="stylesheet" href="{{ @BASE }}/public/css/bundle.css">
+    <link rel="stylesheet" href="public/css/blog.css">
+    <link rel="stylesheet" href="public/css/blog-old-ie.css">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/grids.css">
+    <link rel="stylesheet" href="public/css/buttons.css">
+    <link rel="stylesheet" href="public/css/menus.css">
+    <link rel="stylesheet" href="public/css/forms.css">
     <script src="public/js/bundle.js"></script>
 </head>
+
 <body>
-
-<include href="navbar.htm" />
-
-<div class="divider"></div>
-
-<section class="content">
-    <F3:repeat group="{{ \Flash::instance()->getMessages() }}" value="{{ @msg }}">
-        <div class="toast {{ @msg.status }}">
+    <repeat group="{{ \Flash::instance()->getMessages() }}" value="{{ @msg }}">
+        <div class="message {{ @msg.status }}">
             {{ @msg.text | esc }}
         </div>
-    </F3:repeat>
-    <include href="{{ @view }}" />
-</section>
-
-<div class="divider"></div>
-
-<include href="footer.htm" />
-
-<script src="minify/js?files=tinymce.js"></script>
+    </repeat>
+    <div id="layout" class="pure-g">
+        <include href="navbar.htm" />
+        <div class="content pure-u-1 pure-u-md-3-4">
+            <include href="{{ @view }}" />
+            <include href="footer.htm" />
+        </div>
+        <script src="minify/js?files=tinymce.js"></script>
+    </div>
 </body>
 </html>

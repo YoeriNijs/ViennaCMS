@@ -29,8 +29,9 @@ class AdminController extends BaseController {
         $body = $this->f3->get('POST.body');
 
         if(empty($title) || empty($body)) {
-            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid') . '.', 'toast-error');
+            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid'), 'error');
             $this->f3->reroute('/blogpost');
+            return;
         }
 
         $post = new \Blogpost($this->database);
@@ -43,7 +44,7 @@ class AdminController extends BaseController {
         $logger = new \Log(Logs::SYSTEM);
         $logger->write("Created new blog article with title " . $title);
 
-        \Flash::instance()->addMessage($this->f3->get('messages.admin.success') . '.', 'toast-success');
+        \Flash::instance()->addMessage($this->f3->get('messages.admin.success'), 'success');
         $this->f3->reroute('/blogpost');
     }
 
@@ -59,14 +60,16 @@ class AdminController extends BaseController {
 
         if($_FILES["blogimage"]["size"] > 500000) {
             $logger->write("Invalid image: too big");
-            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid.image.size') . '.', 'toast-error');
+            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid.image.size'), 'error');
             $this->f3->reroute('/blogpost');
+            return "";
         }
 
         if($imageFileType != "jpg") {
             $logger->write("Invalid image: invalid type");
-            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid.image.ext'), 'toast-error');
+            \Flash::instance()->addMessage($this->f3->get('messages.admin.invalid.image.ext'), 'error');
             $this->f3->reroute('/blogpost');
+            return "";
         }
 
         $length = 20;
@@ -77,8 +80,9 @@ class AdminController extends BaseController {
             rename($targetFile, $storedImgName);
         } else {
             $logger->write("Invalid image: cannot move image");
-            \Flash::instance()->addMessage($this->f3->get('messages.admin.cannot.upload.image'), 'toast-error');
+            \Flash::instance()->addMessage($this->f3->get('messages.admin.cannot.upload.image'), 'error');
             $this->f3->reroute('/blogpost');
+            return "";
         }
 
         // Resize image and delete uploaded one
