@@ -30,7 +30,6 @@ This basic blog system uses the following techniques in order to display awesome
   If you want to see the stacktrace in case of any errors, just comment the error part in index.php.
 
 # Credits
-  * [Logo](https://www.flaticon.com/authors/smashicons)
   * 'No image' by The Noun Project/Gabriele Malaspina
   
 # Screenshots
