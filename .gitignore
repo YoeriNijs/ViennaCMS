@@ -1,7 +1,8 @@
 /vendor
 /tmp
 /public/
-/logs
+/logs/*
+!/logs/.htaccess
 .yarn.lock
 .composer.lock
 .package-lock.json
