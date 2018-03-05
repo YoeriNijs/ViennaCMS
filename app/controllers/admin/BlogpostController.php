@@ -7,11 +7,6 @@ use Logs;
 
 class BlogpostController extends BaseAdminController {
 
-    function beforeroute() {
-        $this->checkForCSRFAttack();
-        $this->checkLogin();
-    }
-
     function create() {
         $this->render();
     }
@@ -70,7 +65,7 @@ class BlogpostController extends BaseAdminController {
         $logger = new \Log(Logs::SYSTEM);
         $logger->write("Created new blog article with title " . $title);
 
-        \Flash::instance()->addMessage($this->f3->get('messages.admin.success'), 'success');
+        \Flash::instance()->addMessage($this->f3->get('messages.admin.success.blogpost'), 'success');
         $this->f3->reroute('/blogpost/all');
     }
 

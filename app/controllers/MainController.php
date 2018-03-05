@@ -21,10 +21,26 @@ class MainController extends BaseController {
 
     function renderPost() {
         $id = $this->f3->get('PARAMS.item');
+        if(is_null($id)) {
+            return;
+        }
         $model = new Blogpost($this->database);
         $blogpost = $model->getByID($id)[0];
         $this->f3->set('blogpost', $blogpost);
         $this->f3->set('view', 'pages/blogpost.htm');
+        $template = new Template();
+        echo $template->render('layout.htm');
+    }
+
+    function renderPage() {
+        $id = $this->f3->get('PARAMS.item');
+        if(is_null($id)) {
+            return;
+        }
+        $model = new Page($this->database);
+        $page = $model->getByID($id)[0];
+        $this->f3->set('page', $page);
+        $this->f3->set('view', 'pages/page.htm');
         $template = new Template();
         echo $template->render('layout.htm');
     }

@@ -7,6 +7,15 @@
                 <li class="nav-item">
                     <a href="{{ @BASE }}" class="btn btn-link">Home</a>
                 </li>
+                <check if="{{ sizeof(@menuitems) > 0 }}">
+                    <true>
+                        <repeat group="{{ @menuitems }}" value="{{ @menuitem }}">
+                            <li class="nav-item">
+                                <a href="{{ @BASE }}/page/{{ @menuitem.id }}" class="btn btn-link">{{ @menuitem.title }}</a>
+                            </li>
+                        </repeat>
+                    </true>
+                </check>
                 <check if="{{ @SESSION.display_name }}">
                     <true>
                         <li class="nav-item">

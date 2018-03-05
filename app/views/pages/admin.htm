@@ -8,8 +8,13 @@
                     <li class="pure-menu-item"><a href="{{ @BASE }}/blogpost/all"  class="pure-menu-link">{{ @messages.admin.blogpost.edit }}</a></li>
                 </ul>
             </li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <p class="pure-menu-link">{{ @messages.admin.page.general }}</p>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="{{ @BASE }}/page/create" class="pure-menu-link">{{ @messages.admin.page.create }}</a></li>
+                    <li class="pure-menu-item"><a href="{{ @BASE }}/page/all"  class="pure-menu-link">{{ @messages.admin.page.edit }}</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
     <include href="{{ @admview }}" />

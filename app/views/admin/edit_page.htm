@@ -1,0 +1,13 @@
+<form class="pure-form" method="POST" action="{{ @BASE }}/page/edit/{{ @page.id }}" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="{{ @CSRF }}"/>
+    <input class="pure-input-1" type="text" name="title" value="{{ @page.title }}" placeholder="{{ @messages.admin.blogtitle }}"><br />
+    <br />
+    <textarea class="tinymce" name="body">{{ @page.body }}</textarea>
+    <br />
+    <button type="submit" class="pure-button pure-button-primary">{{ @messages.admin.publish }}</button> &nbsp;
+
+    <!-- TODO: Workaround for deleting one page instance. Javascript needs to be separated more gracefully! -->
+    <a href="#" onclick="if(confirm('{{ @messages.confirmation.delete.page }}')) window.open('{{ @BASE }}/page/delete/{{ @page.id }}', '_self');">{{ @messages.action.delete }}</a>
+</form>
+
+

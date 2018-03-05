@@ -1,0 +1,15 @@
+<check if="{{ is_null(@page) }}">
+    <true>
+        {{ @messages.errors.no.page }}
+    </true>
+    <false>
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ @page.title }}</h2>
+            </header>
+            <div class="post-description">
+                {{ @page.body | raw }}
+            </div>
+        </section>
+    </false>
+</check>

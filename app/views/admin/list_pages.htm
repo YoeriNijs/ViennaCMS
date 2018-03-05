@@ -1,4 +1,4 @@
-<check if="{{ sizeof(@blogposts) > 0 }}">
+<check if="{{ sizeof(@pages) > 0 }}">
     <true>
         <table class="pure-table">
             <thead>
@@ -9,18 +9,18 @@
                 </tr>
             </thead>
             <tbody>
-                <repeat group="{{ @blogposts }}" value="{{ @blogpost }}">
+                <repeat group="{{ @pages }}" value="{{ @page }}">
                     <tr>
-                        <td>{{ @blogpost.id }}</td>
-                        <td><a href="{{ @BASE }}/blogpost/edit/{{ @blogpost.id }}">{{ @blogpost.title }}</a></td>
-                        <td>{{ @blogpost.datetime }}</td>
+                        <td>{{ @page.id }}</td>
+                        <td><a href="{{ @BASE }}/page/edit/{{ @page.id }}">{{ @page.title }}</a></td>
+                        <td>{{ @page.datetime }}</td>
                     </tr>
                 </repeat>
             </tbody>
         </table>
     </true>
     <false>
-        {{ @messages.errors.no.blogposts }}
+        {{ @messages.errors.no.pages }}
     </false>
 </check>
 

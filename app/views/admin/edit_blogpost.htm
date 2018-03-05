@@ -9,7 +9,7 @@
     <button type="submit" class="pure-button pure-button-primary">{{ @messages.admin.publish }}</button> &nbsp;
 
     <!-- TODO: Workaround for deleting one blogpost instance. Javascript needs to be separated more gracefully! -->
-    <a href="#" onclick="if(confirm('Weet je zeker dat je deze blogpost wilt verwijderen?')) window.open('{{ @BASE }}/blogpost/delete/{{ @blogpost.id }}', '_self');">{{ @messages.action.delete }}</a>
+    <a href="#" onclick="if(confirm('{{ @messages.confirmation.delete.blogpost }}')) window.open('{{ @BASE }}/blogpost/delete/{{ @blogpost.id }}', '_self');">{{ @messages.action.delete }}</a>
 </form>
 
 

@@ -32,9 +32,15 @@ This basic blog system uses the following techniques in order to display awesome
   
   If you want to see the stacktrace in case of any errors, just comment the error part in index.php.
 
+# Updates
+  - 03-05-2018: added edit and delete options for blogposts, added support for pages.
+  
 # Credits
   * 'No image' by The Noun Project/Gabriele Malaspina
   
 # Screenshots
 ![Screenshot 1](https://i.imgur.com/dFBSI4u.png)
 ![Screenshot 2](https://i.imgur.com/htmsCyy.png)
+![Screenshot 3](https://i.imgur.com/ULWWGS0.png)
+![Screenshot 4](https://i.imgur.com/3i3b6Sk.png)
+![Screenshot 5](https://i.imgur.com/BzEHjBf.png)

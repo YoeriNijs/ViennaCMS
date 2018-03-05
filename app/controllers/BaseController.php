@@ -26,6 +26,19 @@ class BaseController {
      */
     function beforeroute() {
         $this->checkForCSRFAttack();
+        $this->checkMenuItems();
+    }
+
+    /**
+     * Adds the latest pages to F3's storage, to display
+     * them to the website visitors. Cache the items
+     * for two minutes in order to reduce database
+     * connections.
+     */
+    function checkMenuItems() {
+        $model = new Page($this->database);
+        $items = $model->all();
+        $this->f3->set('menuitems', $items, 120);
     }
 
     function checkLogin() {
