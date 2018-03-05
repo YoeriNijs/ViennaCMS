@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ @BASE }}/public/css/buttons.css">
     <link rel="stylesheet" href="{{ @BASE }}/public/css/menus.css">
     <link rel="stylesheet" href="{{ @BASE }}/public/css/forms.css">
+    <link rel="stylesheet" href="{{ @BASE }}/public/css/tables.css">
     <script src="{{ @BASE }}/public/js/bundle.js"></script>
 </head>
 
@@ -31,7 +32,7 @@
             <include href="{{ @view }}" />
             <include href="footer.htm" />
         </div>
-        <script src="minify/js?files=tinymce.js"></script>
+        <script src="{{ @BASE }}/minify/js?files=tinymce.js"></script>
     </div>
 </body>
 </html>

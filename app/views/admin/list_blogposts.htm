@@ -1,0 +1,27 @@
+<check if="{{ sizeof(@blogposts) > 0 }}">
+    <true>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>{{ @messages.admin.blogtitle }}</th>
+                    <th>{{ @messages.admin.blogdate }}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <repeat group="{{ @blogposts }}" value="{{ @blogpost }}">
+                    <tr>
+                        <td>{{ @blogpost.id }}</td>
+                        <td><a href="{{ @BASE }}/blogpost/edit/{{ @blogpost.id }}">{{ @blogpost.title }}</a></td>
+                        <td>{{ @blogpost.datetime }}</td>
+                    </tr>
+                </repeat>
+            </tbody>
+        </table>
+    </true>
+    <false>
+        {{ @messages.errors.no.blogposts }}
+    </false>
+</check>
+

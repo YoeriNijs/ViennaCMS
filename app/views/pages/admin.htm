@@ -1,9 +1,16 @@
 <div>
-    <p>{{ @messages.admin.start.title }}!</p>
-    <p>{{ @messages.admin.start.desc }}...</p>
-    <div>
-        <a href="{{ @BASE }}/blogpost">
-            <button class="pure-button pure-button-primary">{{ @messages.admin.create }}</button>
-        </a>
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <p class="pure-menu-link">{{ @messages.admin.blogpost.general }}</p>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="{{ @BASE }}/blogpost/create" class="pure-menu-link">{{ @messages.admin.blogpost.create }}</a></li>
+                    <li class="pure-menu-item"><a href="{{ @BASE }}/blogpost/all"  class="pure-menu-link">{{ @messages.admin.blogpost.edit }}</a></li>
+                </ul>
+            </li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+        </ul>
     </div>
+    <include href="{{ @admview }}" />
 </div>
