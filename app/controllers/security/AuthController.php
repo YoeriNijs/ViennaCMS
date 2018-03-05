@@ -9,7 +9,9 @@ use User;
 
 class AuthController extends BaseController {
 
-    function beforeroute() {}
+    function beforeroute() {
+        $this->checkMenuItems();
+    }
 
     function render() {
         $this->f3->set('view', 'pages/login.htm');
