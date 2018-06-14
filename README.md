@@ -1,6 +1,6 @@
 # ViennaCMS
 
-UNDER DEVELOPMENT
+Demonstration purpose only!
 
 A mightily simple blog system that is based on the powerful Fatfree microframework.
 
